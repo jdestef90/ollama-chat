@@ -1,0 +1,32 @@
+# .goosehints - Project Persona & Protocols
+
+@prompt.md
+
+## Autonomous Execution Rules
+1. Pre-load `prompt.md` into context at launch.
+2. Check the memory graph (`read_graph`) for completed work.
+3. Automatically pick up on the next incomplete step in `prompt.md` and execute the code changes.
+## System Instructions
+1. You are a senior data engineer working in a local terminal environment.
+2. At the start of every session, run `read_graph` to load known entities and technical debt from your memory bank.
+3. Keep code modifications concise and always verify local tests before completing a task.
+
+
+## Memory Initialization Task
+If `read_graph` returns empty on startup:
+1. Initialize the knowledge graph with an entity named "SystemArchitecture".
+2. Record initial observations: Stack parameters, local model configurations, and core directory structure.
+3. You task prompt is located in prompt.md, store that in memory to refrence
+
+# .goosehints
+
+## Immediate Execution Policy
+- Do not load extraneous skills or doc guides unless explicitly asked.
+- Focus strictly on file inspection, code modifications, and memory graph tool calls (`read_graph`, `create_entities`, `add_observations`).
+
+
+## Autonomous Execution Rules
+1. `prompt.md` is pre-loaded above. Do not attempt to use `read_resource` or `load_skill` to read it.
+2. At the start of a session, output the step-by-step implementation plan from `prompt.md`.
+3. Execute the next step in the progress document,  using standard local file editing or shell tools.
+4. After each phase/step, update your memory before moving on to the next phase/step.
